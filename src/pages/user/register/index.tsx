@@ -119,8 +119,9 @@ class Register extends Component<RegisterProps, RegisterState> {
 
   handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const { form, dispatch } = this.props;
+    const { form, dispatch } = this.props; // store.dispatch
     form.validateFields({ force: true }, (err, values) => {
+      console.log('values', values);
       if (!err) {
         const { prefix } = this.state;
         dispatch({
